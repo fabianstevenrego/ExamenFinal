@@ -55,19 +55,18 @@ public class BillController {
 	
 	
 	
-	
 	@DeleteMapping("/{id}")
-	public Bill deleteProductosbyId(@PathVariable Integer id) {
+	public Bill deleteBillsId(@PathVariable Integer id) {
 		
 		Optional<Bill> bill = billRepositori.findById(id);
 		
 		if (bill.isPresent()) {
 			
-			Bill productoReturn = bill.get();
+			Bill billReturn = bill.get();
 			
 			billRepositori.deleteById(id);
 			
-			return productoReturn;
+			return billReturn;
 		}
 		
 		return null;

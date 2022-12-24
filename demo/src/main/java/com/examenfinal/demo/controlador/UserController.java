@@ -18,6 +18,7 @@ import com.examenfinal.demo.repositorio.UserRepositori;
 
 @RestController
 @RequestMapping("/users")
+
 public class UserController {
 
 
@@ -30,7 +31,7 @@ public class UserController {
 		return userRepositori.findAll();
 	}
 	
-	@GetMapping("/{id}/bills") 
+	@GetMapping("/{id}/bills")
 	public List<Bill> user(@PathVariable Integer id){
 		Optional<User> usuarios=userRepositori.findById(id);
 		if(usuarios.isPresent()) {
